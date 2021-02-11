@@ -4,11 +4,11 @@ dokumentasi pertahap belajar laravel(php)
 ---
 ### silabus
 
-* **html css dasar**
-* **js dasar**
-* **php dasar(native)**
+* **_html css dasar_**
+* **_js dasar_**
+* **_php dasar(native)_**
 * oop php(object oriented)
 * konsep mvc
 * laravel
-* mysql
+* **_mysql_**
 ***
