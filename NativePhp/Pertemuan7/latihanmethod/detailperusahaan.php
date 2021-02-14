@@ -1,5 +1,14 @@
 <?php 
-
+if(
+    !isset($_GET["perusahaan"])||
+!isset($_GET["lamanya"])||
+!isset($_GET["desk"])||
+!isset($_GET["syarat"])||
+!isset($_GET["profile"])
+){
+    header("Location: latihan-method.php");
+    exit;
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,7 +33,7 @@
     <title>Hello, world!</title>
   </head>
   <body>
-  <div class="row container p-5">
+  <div class="row mx-auto container p-5">
   <img src="<?= $_GET["profile"]?>" class="img-thumbnail" alt="..." >
   <h1 class="fs-1"><?= $_GET["perusahaan"];?></h1>
  
