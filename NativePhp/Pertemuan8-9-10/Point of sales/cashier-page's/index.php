@@ -371,6 +371,7 @@ if (isset($_POST["editqty"])) {
                             <div class="card border border-white" style="width: 15rem;">
 
                                 <img src="<?= $produk_detail['foto_product']; ?>" class="card-img-top" alt="...">
+                               
                                 <div class="card-body">
                                     <form action="addcart.php" method="POST">
                                         <input type="hidden" readonly
@@ -394,11 +395,20 @@ if (isset($_POST["editqty"])) {
                                         <p class="card-text mb-3 fw-bold text-secondary">
                                             <?= $produk_detail["kategori_product"]; ?>
                                         </p>
-
+                                        
+                                        <?php $produk_detail['stock']; if($produk_detail['stock'] == 0):?>
+                                            <p class="fs-6 text-dark fw-bold">Stock : Habis</p>
+                                            <div class="d-grid gap-2">
+                                            <button class="btn btn-outline-secondary btn-sm" 
+                                                role="button" disabled id="refresh">Stock Habis</button>
+                                        <?php else:?>
+                                            <p class="fs-6 text-dark fw-bold">Stock : <?=$produk_detail['stock'];?></p>
                                         <div class="d-grid gap-2">
                                             <button class="btn btn-outline-success btn-sm" name="beli" value="beli"
                                                 role="button" id="refresh"><i class="bi bi-cart-plus-fill"></i></button>
+                                        <?php endif;?>
                                     </form>
+                                    
                                     <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#myModal<?= $produk_detail["id_product"]; ?>"><i
                                             class="bi bi-info-circle"></i></button>
