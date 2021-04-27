@@ -270,6 +270,7 @@ if (isset($_POST["editqty"])) {
                         <!-- query to select carts -->
                         <?php $belanjaan = queries("SELECT * FROM transaksi") ?>
                         <?php foreach ($belanjaan as $produkdibeli) : ?>
+
                         <div class="container" style="display:none">
                             <div class="mb-3 mt-5">
                                 <label class="form-label">Id_transaksi</label>
@@ -396,13 +397,13 @@ if (isset($_POST["editqty"])) {
                                             <?= $produk_detail["kategori_product"]; ?>
                                         </p>
                                         
-                                        <?php $produk_detail['stock']; if($produk_detail['stock'] == 0):?>
+                                        <?php $produk_detail['stock']; if($produk_detail['stock'] <= 0):?>
                                             <p class="fs-6 text-dark fw-bold">Stock : Habis</p>
                                             <div class="d-grid gap-2">
                                             <button class="btn btn-outline-secondary btn-sm" 
                                                 role="button" disabled id="refresh">Stock Habis</button>
                                         <?php else:?>
-                                            <p class="fs-6 text-dark fw-bold">Stock : <?=$produk_detail['stock'];?></p>
+                                            <p class="fs-6 text-dark fw-bold">Stock : <?=$produk_detail['stock'];?><input type="hidden" name="stock" value="<?=$produk_detail['stock'];?>"></p>
                                         <div class="d-grid gap-2">
                                             <button class="btn btn-outline-success btn-sm" name="beli" value="beli"
                                                 role="button" id="refresh"><i class="bi bi-cart-plus-fill"></i></button>

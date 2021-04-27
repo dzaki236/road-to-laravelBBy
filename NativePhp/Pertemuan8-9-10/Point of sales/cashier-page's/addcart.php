@@ -8,6 +8,7 @@ function beliproduct($keranjang){
    $harga_product = htmlspecialchars($keranjang["harga_product"]);
    $foto_product = htmlspecialchars($keranjang["foto_product"]);
    $quantity = htmlspecialchars($keranjang["quantity"]);
+   $stock = htmlspecialchars($keranjang['stock']);
    $total_belanja = ($harga_product * $quantity);
    $beliquery = "INSERT INTO transaksi (`kode_product`,`nama_product`,`foto_product`,`harga`,`quantity`,`total_belanja`) VALUES ('$kode_product','$nama_product','$foto_product',$harga_product,$quantity,$total_belanja)";
     mysqli_query($koneksi, $beliquery);
